@@ -1,0 +1,18 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<body>
+<th:block th:each="date : ${dates}">
+    <h2 th:text="${date}"></h2>
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Time</th>
+    </tr>
+    <tr th:each="reminder : ${remindersByDate.get(date)}" th:style="${reminder.completed} ? 'background-color:#808080' : ''">
+        <th th:text="${reminder.description}"></th>
+        <th th:text="${reminder.time}"></th>
+    </tr>
+</table>
+</th:block>
+</body>
+</html>

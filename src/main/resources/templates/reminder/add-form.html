@@ -1,0 +1,17 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<body>
+<form th:object="${reminderForm}" action="/reminder/add" method="post">
+    <label>Description:</label><br>
+    <input type="text" th:field="*{description}">
+    <br>
+    <label>Date:</label><br>
+    <input type="date" th:field="*{date}">
+    <br>
+    <label>Time:</label><br>
+    <input type="time" th:field="*{time}">
+    <br>
+    <input type="submit">
+</form>
+</body>
+</html>
